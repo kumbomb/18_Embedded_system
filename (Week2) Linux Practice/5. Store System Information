@@ -1,0 +1,29 @@
+(Practice 5) Store System Information 
+
+ 1. Store user id list in a file named "system_info.txt" 
+ 
+ - cat /etc/passwd | awk -F':''{if($3>500)print $1}' | sort > system_info.txt 
+
+  => (adduser로 생성된 일반 사용자 계정은 uid가 500이상이기 때문에 $3 >500 이라는 조건문을 추가)
+  => -F 옵션은 입력필드를 ':'로 구별한다. 
+  => 결론적으로 uid가 500이상인 행의 첫번째 단어를 알파벳 순으로 정렬하여 출력한다. 즉 계정명을 출력하게 된다.
+  => 그 출력되는 결과가 system_info.txt 파일에 저장된다.
+
+ 2. Add the cpu info to the "system_info.txt" file
+ 
+ - cat /proc/cpuinfo | grep cpu >> system_info.txt
+  
+  => 위에서 만든 파일의 내용에 추가되어진다. (새로 파일을 만드는 것 x)
+
+
+ * '>' (redirection)
+ - 표준 스트림의 흐름을 바꾸는 역할을 한다. 일반적으로 커맨로 실행 되는 프로세스는 표준 입력 스트림, 표준 출력 스트림과 오류 출력 스트림을 가지고 있다.
+   총 하나의 입력 스트림과 출력 스트림을 갖고 있다.  일반적으로 문자열로 콘솔에 출력하게 되어 있다. 
+   여기서 표준 스트림의 흐름을 바꾼다는 것은 실행된 프로세스의 스트림을 콘솔이 아닌 파일로 사용하게 할 수 있다는 것을 의미한다.
+
+ * '>>' (double redirection)
+ - 기존의 '>' redirection 기호로는 output파일에 다른 내용이 있다고 하더라도 새로운 내용으로 대체가 되어버린다.
+   하지만 '>>' double redirection 기호를 사용하면 output에 있던 파일내용 뒤에 새로운 내용이 추가가 되어 원래 내용이 지워지지않는다.
+
+ -예제
+ ls > ls.txt   -> ls로 나오는 결과를 ls.txt라는 파일에 저장시킨다.
