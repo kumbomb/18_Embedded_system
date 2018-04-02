@@ -16,12 +16,7 @@ The overall system operation process is as follows.
 
 At first, the security is activated by pressing the Set Up button.
 
-Secondly, the ultrasonic sensors detect the approach.
-          Measure the time if someone approach it within 30 cm.
-          Security level is green from 0 to 10.
-          Security level is yellow from 11 to 20.
-          Security level is red from 20 to 30.
-          Since then, a waring tone has benn emitted.
+Secondly, the ultrasonic sensors detect the approach. Measure the time if someone approach it within 30 cm. Security level is green from 0 to 10. Security level is yellow from 11 to 20. Security level is red from 20 to 30. Since then, a waring tone has benn emitted.
 
 Third, if you touch free button, then alarm is lifted and you will revoke security.
 
