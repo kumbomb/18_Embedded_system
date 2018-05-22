@@ -168,7 +168,7 @@ void sensor_init()
 
 int main(void)
 {
-    	pthread_t p1, p2, p3,p4;
+    pthread_t p1, p2, p3,p4;
 	signal(SIGINT,sig_handler);
 	if(wiringPiSetupGpio() == -1)
 	{
