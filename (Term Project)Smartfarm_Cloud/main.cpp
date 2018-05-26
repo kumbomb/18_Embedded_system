@@ -118,7 +118,7 @@ void *monitor_data(void *arg)
 		temp = get_temp();
 		lightness = get_light();
 		if(temp > 0 && lightness > 0){ put(temp,lightness);}
-		if(temp >= 20ss){ isFan = 1; pthread_cond_signal(&fanon);}
+		if(temp >= 20){ isFan = 1; pthread_cond_signal(&fanon);}
 		if(lightness >= 3000){ isLed = 1; pthread_cond_signal(&ledon);}    
 		pthread_cond_signal(&fill);
 		pthread_mutex_unlock(&mutex);
